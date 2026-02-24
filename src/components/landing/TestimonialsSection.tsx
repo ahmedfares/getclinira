@@ -1,24 +1,34 @@
-import { Star } from "lucide-react";
+import { CheckCircle, Phone, CalendarCheck, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-const testimonials = [
+const DEMO_LINK = "https://cal.com/ahmed-fares-pczlxl/30min";
+
+const stats = [
   {
-    name: "Dr. Sarah Mitchell",
-    role: "Owner, Bright Smile Dental",
-    quote: "Since switching to Clinira, we've reduced missed calls by 90% and booked 35% more appointments. Our front desk team finally has time to focus on patients in the office.",
-    rating: 5,
+    icon: Phone,
+    value: "100%",
+    label: "Calls Answered",
+    desc: "Every patient call picked up instantly, 24/7/365.",
   },
   {
-    name: "Dr. James Okafor",
-    role: "Medical Director, ClearSkin Dermatology",
-    quote: "We were losing patients after hours. Clinira handles everything — scheduling, cancellations, even insurance questions. It paid for itself in the first month.",
-    rating: 5,
+    icon: CalendarCheck,
+    value: "95%+",
+    label: "Booking Rate",
+    desc: "Automated scheduling that converts callers into patients.",
   },
   {
-    name: "Maria Gonzalez",
-    role: "Practice Manager, Family Health Partners",
-    quote: "Our patients love it. They can't tell it's AI. And the analytics dashboard gives us insights we never had before. Clinira is a game-changer.",
-    rating: 5,
+    icon: TrendingUp,
+    value: "3x",
+    label: "ROI in 90 Days",
+    desc: "Clinics see measurable revenue growth within the first quarter.",
+  },
+  {
+    icon: CheckCircle,
+    value: "<24hrs",
+    label: "Setup Time",
+    desc: "Go live in under a day with zero disruption to your practice.",
   },
 ];
 
@@ -34,36 +44,50 @@ const TestimonialsSection = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
-            Loved by Clinics
+            Why Clinics Choose Clinira
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-foreground mb-4">
-            What Healthcare Professionals Say
+            Built for Results, Not Just Promises
           </h2>
+          <p className="text-lg text-muted-foreground">
+            Clinira is engineered to deliver measurable impact from day one.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {testimonials.map((item, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+          {stats.map((item, i) => (
             <motion.div
-              key={item.name}
+              key={item.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl bg-card border border-border p-8 shadow-soft"
+              className="rounded-2xl bg-card border border-border p-6 shadow-soft text-center"
             >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: item.rating }).map((_, j) => (
-                  <Star key={j} className="w-5 h-5 fill-accent text-accent" />
-                ))}
+              <div className="w-12 h-12 rounded-xl gradient-primary mx-auto mb-4 flex items-center justify-center">
+                <item.icon className="w-6 h-6 text-primary-foreground" />
               </div>
-              <p className="text-foreground mb-6 leading-relaxed">"{item.quote}"</p>
-              <div>
-                <div className="font-semibold text-foreground">{item.name}</div>
-                <div className="text-sm text-muted-foreground">{item.role}</div>
-              </div>
+              <div className="text-3xl font-extrabold font-display text-foreground mb-1">{item.value}</div>
+              <div className="text-sm font-semibold text-primary mb-2">{item.label}</div>
+              <p className="text-sm text-muted-foreground">{item.desc}</p>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center"
+        >
+          <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
+            <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer">
+              See It For Yourself
+              <ArrowRight className="w-5 h-5 ml-1" />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

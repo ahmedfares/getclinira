@@ -3,9 +3,11 @@ import { ArrowRight, Play, CheckCircle } from "lucide-react";
 import dashboardMockup from "@/assets/dashboard-mockup.png";
 import { motion } from "framer-motion";
 
+const DEMO_LINK = "https://cal.com/ahmed-fares-pczlxl/30min";
+
 const HeroSection = () => {
   return (
-    <section className="relative gradient-hero pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <section className="relative gradient-hero pt-44 pb-20 lg:pt-52 lg:pb-28 overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
@@ -48,13 +50,17 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="hero" size="lg" className="text-base px-8 py-6">
-              Book a Demo
-              <ArrowRight className="w-5 h-5 ml-1" />
+            <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
+              <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer">
+                Book a Demo
+                <ArrowRight className="w-5 h-5 ml-1" />
+              </a>
             </Button>
-            <Button variant="heroOutline" size="lg" className="text-base px-8 py-6">
-              <Play className="w-5 h-5 mr-1" />
-              See How It Works
+            <Button variant="heroOutline" size="lg" className="text-base px-8 py-6" asChild>
+              <a href="#video-demo">
+                <Play className="w-5 h-5 mr-1" />
+                See How It Works
+              </a>
             </Button>
           </motion.div>
         </div>

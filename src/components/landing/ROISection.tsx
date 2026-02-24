@@ -7,7 +7,7 @@ const comparisons = [
     label: "Annual Cost",
     before: "$36,000+",
     beforeLabel: "Receptionist",
-    after: "From $299/mo",
+    after: "From $499/mo",
     afterLabel: "Clinira",
   },
   {
