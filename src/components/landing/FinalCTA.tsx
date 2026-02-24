@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+const DEMO_LINK = "https://cal.com/ahmed-fares-pczlxl/30min";
+
 const FinalCTA = () => {
   return (
     <section className="py-20 lg:py-28 bg-secondary relative overflow-hidden">
@@ -24,9 +26,11 @@ const FinalCTA = () => {
           <p className="text-lg text-secondary-foreground/70 mb-10 max-w-xl mx-auto">
             Join 100+ clinics already using Clinira to answer every call, book more appointments, and deliver exceptional patient experiences — 24/7.
           </p>
-          <Button variant="cta" size="lg" className="text-lg px-10 py-7">
-            Book Your Free Demo Today
-            <ArrowRight className="w-5 h-5 ml-2" />
+          <Button variant="cta" size="lg" className="text-lg px-10 py-7" asChild>
+            <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer">
+              Book Your Free Demo Today
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
           </Button>
           <p className="text-sm text-secondary-foreground/50 mt-4">
             No credit card required • Setup in under 24 hours • Cancel anytime
