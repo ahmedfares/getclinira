@@ -7,7 +7,7 @@ const DEMO_LINK = "https://cal.com/ahmed-fares-pczlxl/30min";
 
 const HeroSection = () => {
   return (
-    <section className="relative gradient-hero pt-44 pb-20 lg:pt-52 lg:pb-28 overflow-hidden">
+    <section className="relative gradient-hero pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
