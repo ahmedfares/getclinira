@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Zap } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 const DEMO_LINK = "https://cal.com/ahmed-fares-pczlxl/30min";
 
@@ -24,22 +24,8 @@ const Header = () => {
 
   return (
     <>
-      {/* Flash Sale Banner */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-accent text-accent-foreground">
-        <a
-          href={DEMO_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="container flex items-center justify-center gap-2 py-2 text-sm font-semibold hover:opacity-90 transition-opacity"
-        >
-          <Zap className="w-4 h-4" />
-          <span>🔥 Flash Sale: Your First Month is FREE — Claim It Now</span>
-          <Zap className="w-4 h-4" />
-        </a>
-      </div>
-
       <header
-        className={`fixed top-[36px] left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "glass shadow-soft py-3" : "bg-transparent py-5"
         }`}
       >
